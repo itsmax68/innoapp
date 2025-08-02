@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lost & Found</title> <!-- Consistent Title -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="floor.html">Floor</a>
+        <a href="campus.html">Campus Area</a>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Contact <i class="fas fa-caret-down"></i></button>
+        <div class="dropdown-content">
+          <a href="contact.html"><i class="fas fa-phone-alt"></i> Lost & Found Department</a>
+          <a href="login.html"><i class="fas fa-user-shield"></i> Admin Upload</a>
+        </div>
+      </div>
+    </nav>
+  <div class="container">
+    <h1>Upload Lost & Found Item</h1>
+    <form id="upload-form">
+      <label for="itemName">Item Name:</label>
+      <input type="text" id="itemName" name="name" placeholder="e.g., Blue Water Bottle" required>
+
+      <label for="floor">Select Floor:</label>
+      <select id="floor" name="location">
+        <option value="">-- Select Floor --</option>
+        <option value="Ground Floor">Ground Floor</option>
+        <option value="First Floor">First Floor</option>
+        <option value="Second Floor">Second Floor</option>
+        <option value="Third Floor">Third Floor</option>
+        <option value="Fourth Floor">Fourth Floor</option>
+      </select>
+
+      <label for="area">Select Campus Area:</label>
+      <select id="area" name="area">
+        <option value="">-- Select Area --</option>
+        <option value="Canteen">Canteen</option>
+        <option value="Library">Library</option>
+        <option value="Lawn">Lawn</option>
+        <option value="Corridor">Corridor</option>
+        <option value="Garden">Garden</option>
+        <option value="Lab">Lab</option>
+        <option value="Hallway">Hallway</option>
+      </select>
+
+      <label>Time Found:</label>
+      <div class="time-select-group">
+        <select id="hour" required>
+          <option value="">HH</option>
+          <option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+        </select>
+        <select id="minute" required>
+          <option value="">MM</option>
+          <option value="00">00</option><option value="05">05</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">40</option><option value="50">50</option><option value="55">55</option>
+        </select>
+        <select id="ampm" required>
+          <option value="">AM/PM</option>
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>
+      </div>
+
+      <label for="department">Select Department:</label>
+      <select id="department" name="department" required>
+        <option value="">-- Select Department --</option>
+        <option value="B.Tech">B.Tech</option>
+        <option value="B.Sc">B.Sc</option>
+        <option value="B.A">B.A</option>
+        <option value="Diploma">Diploma</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="photo">Upload Thumbnail Image:</label>
+      <input type="file" id="photo" name="photo" accept="image/*" required>
+      <label for="photo2">Upload Image 2:</label>
+      <input type="file" id="photo2" name="photo2" accept="image/*" required>
+      <label for="photo3">Upload Image 3:</label>
+      <input type="file" id="photo3" name="photo3" accept="image/*" required>
+
+      <button type="submit">Upload Item</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Lost & Found Board &copy; 2025 | College Campus
+  </footer>
+
+  <script>
+    // Existing logic for floor/area mutual exclusivity
+    const floorSelect = document.getElementById("floor");
+    const areaSelect = document.getElementById("area");
+
+    floorSelect.addEventListener("change", () => {
+      if (floorSelect.value !== "") {
+        areaSelect.value = "";
+        areaSelect.disabled = true;
+      } else {
+        areaSelect.disabled = false;
+      }
+    });
+
+    areaSelect.addEventListener("change", () => {
+      if (areaSelect.value !== "") {
+        floorSelect.value = "";
+        floorSelect.disabled = true;
+      } else {
+        floorSelect.disabled = false;
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

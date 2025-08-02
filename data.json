@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "Red Bag",
+    "photo": "https://via.placeholder.com/200x150?text=Thumb1",
+    "photo2": "https://via.placeholder.com/200x150?text=Image2",
+    "photo3": "https://via.placeholder.com/200x150?text=Image3",
+    "location": "First Floor",
+    "department": "CS",
+    "time": "10:30 AM",
+    "area": "Library"
+  },
+  {
+    "id": 2,
+    "name": "Water Bottle",
+    "photo": "https://via.placeholder.com/200x150?text=Thumb2",
+    "photo2": "https://via.placeholder.com/200x150?text=Image2",
+    "photo3": "https://via.placeholder.com/200x150?text=Image3",
+    "location": "Ground Floor",
+    "department": "IT",
+    "time": "11:00 AM",
+    "area": "Canteen"
+  }
+]
